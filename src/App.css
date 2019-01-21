@@ -30,3 +30,123 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  display: grid;
+  grid-template-columns: [margin-l] auto [left-col] 300px [right-col] 300px [margin-r] auto;
+  grid-template-rows: [top] auto [middle] auto [bottom] auto;
+  grid-template-areas: 
+    ". sort filter ."
+    ". main main ."
+    ". add add .";
+}
+
+.sorting {
+  grid-area: sort;
+  justify-self: start;
+}
+
+.filters {
+  grid-area: filter;
+  justify-self: end;
+}
+
+.list {
+  grid-area: main;
+}
+
+.element {
+  height: 200px;
+  width: 600px;
+  border: 1px solid black;
+  text-align: left;
+  margin: .5rem auto;
+}
+
+.element img {
+  float: left;
+  width: 300px;
+  height: 200px;
+  margin-right: 0.5rem;
+}
+
+.element h2 {
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+.element .favourite-food {
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+.element .favourite-food span {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 0px 5px;
+}
+
+.element p {
+  margin: 0.5rem;
+}
+
+button {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border: 0;
+  border-radius: .2rem;
+  margin: .2rem;
+}
+
+button.add {
+  background-color: aqua;
+  font-size: 36px;
+  line-height: 32px;
+  grid-area: add;
+  justify-self: center;
+}
+
+button.sort {
+  background-color: lightskyblue;
+  width: 80px;
+}
+
+button.remove {
+  background-color: red;
+  float: right;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+}
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.popup input,
+.popup .fav-foods {
+  min-width: 190px;
+  flex-grow: 1;
+  margin: 5px;
+}
+
+.popup button {
+  background-color: lightskyblue;
+  width: 150px;
+}
